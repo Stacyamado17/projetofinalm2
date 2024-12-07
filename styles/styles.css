@@ -1,0 +1,242 @@
+/* Importando a fonte Roboto */
+@font-face {
+    font-family: 'Roboto';
+    src: url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+}
+
+/* Estilização geral */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f9; /* Cor de fundo suave */
+    color: #333; /* Cor principal do texto */
+    overflow-x: hidden; /* Evita rolagem horizontal */
+}
+
+/* Estilização do cabeçalho */
+header {
+    background: linear-gradient(135deg, #0077b6, #00b4d8); /* Gradiente azul */
+    color: #fff;
+    padding: 1rem 3rem;
+    display: flex; /* Layout flexível para centralizar conteúdo */
+    justify-content: space-between; /* Espaço entre logo e navegação */
+    align-items: center;
+    position: sticky; /* Fixa o cabeçalho no topo durante a rolagem */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra leve */
+}
+
+/* Estilo da logo */
+header .logo {
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 1px; /* Espaçamento entre letras */
+}
+
+/* Navegação */
+header nav {
+    display: flex;
+    gap: 2rem; /* Espaçamento entre os links */
+}
+
+/* Links de navegação */
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem; /* Tamanho do texto */
+    font-weight: bold;
+    padding: 0.6rem 1.2rem; /* Espaçamento interno */
+    border-radius: 6px; /* Bordas arredondadas */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Efeito suave ao passar o mouse */
+}
+
+header nav a:hover {
+    background-color: #023e8a; /* Fundo mais escuro no hover */
+    transform: scale(1.1); /* Aumenta o tamanho ligeiramente */
+}
+
+/* Seção inicial */
+.intro-section {
+    background: url('https://via.placeholder.com/1200x800') center/cover no-repeat; /* Imagem de fundo */
+    color: #fff; /* Cor do texto */
+    text-align: center;
+    padding: 2rem;
+    height: calc(100vh - 68px); /* Altura da tela menos o cabeçalho */
+    display: flex; /* Centraliza conteúdo */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Títulos da seção inicial */
+.intro-section h2 {
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Sombra no texto */
+}
+
+/* Parágrafos da seção inicial */
+.intro-section p {
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Sombra no texto */
+}
+
+/* Efeito de animação nas letras */
+.intro-section h2,
+.intro-section p {
+    opacity: 0;
+    animation: fadeInLetter 1s ease forwards; /* Animação personalizada */
+}
+
+.intro-section h2 span,
+.intro-section p span {
+    display: inline-block;
+    transform: translateY(20px);
+    animation: fadeInLetter 1s ease forwards;
+    animation-delay: calc(var(--index, 0) * 0.05s); /* Atraso incremental */
+}
+
+/* Animação de entrada */
+@keyframes fadeInLetter {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Seção principal */
+main {
+    padding: 2rem;
+    animation: fadeIn 1.5s ease-in-out; /* Efeito de entrada */
+}
+
+/* Animação para as seções */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilo básico das seções */
+.section {
+    margin-bottom: 4rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease; /* Efeitos suaves */
+}
+
+/* Quando visível */
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Títulos das seções */
+.section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #0077b6; /* Azul destaque */
+}
+
+/* Contêiner de cards */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap; /* Ajusta para múltiplas linhas */
+    gap: 1.5rem; /* Espaçamento entre cards */
+}
+
+/* Cards */
+.card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    padding: 1rem;
+    flex: 1 1 calc(33% - 2rem); /* Largura responsiva */
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s; /* Efeitos no hover */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Aumenta ligeiramente */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra maior */
+}
+
+.card img {
+    width: 100%; /* Imagem responsiva */
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Títulos dos cards */
+.card h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+/* Texto dos cards */
+.card p {
+    font-size: 1rem;
+    color: #666; /* Texto secundário */
+}
+
+/* Contêiner de vídeo */
+.video-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    border-radius: 8px;
+}
+
+/* Vídeos */
+.video-container video {
+    border-radius: 8px;
+}
+
+/* Imagens em uma seção */
+.image-section {
+    display: flex;
+    flex-wrap: wrap; /* Ajusta imagens em múltiplas linhas */
+    gap: 1rem; /* Espaçamento entre imagens */
+    margin-top: 2rem;
+}
+
+.image-section img {
+    flex: 1 1 calc(50% - 1rem); /* Imagens responsivas */
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Sombra nas imagens */
+}
+
+/* Seção de texto */
+.text-section {
+    margin-top: 2rem;
+    padding: 2rem;
+    background-color: #e3f2fd; /* Fundo azul claro */
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Sombra leve */
+}
+
+.text-section p {
+    line-height: 1.6; /* Facilita a leitura */
+    margin-bottom: 1rem;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #0077b6; /* Azul escuro */
+    color: #fff;
+    margin-top: 4rem;
+}

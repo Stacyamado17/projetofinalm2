@@ -10,15 +10,22 @@
     <div class="container">
         <h1>Faça uma Doação</h1>
         <p>Escolha um valor para doar e veja o impacto que você pode causar!</p>
-        <input type="number" id="donationValue" placeholder="Digite o valor da doação (R$)">
+        <input type="number" id="donationValue" placeholder="Digite o valor da doação (R$)" min="0">
         <button onclick="addDonation()">Doar</button>
 
         <div class="result">
-            <p>Total doado: <strong>R$ <span id="totalDonated">0.00</span></strong></p>
+            <p>Doações totais: <strong>R$ <span id="totalDonated">0.00</span></strong></p>
             <p>Cestas básicas compradas: <strong><span id="totalBaskets">0</span></strong></p>
         </div>
     </div>
 
+    <div id="thankModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>🎉 Obrigado!</h2>
+            <p id="modalMessage"></p>
+        </div>
+    </div>
     <script src="../scripts/doacoes.js"></script>
 </body>
 </html>

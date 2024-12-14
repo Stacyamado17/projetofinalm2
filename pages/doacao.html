@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doação Interativa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Faça uma Doação</h1>
+        <p>Escolha um valor para doar e veja o impacto que você pode causar!</p>
+        <input type="number" id="donationValue" placeholder="Digite o valor da doação (R$)">
+        <button onclick="addDonation()">Doar</button>
+
+        <div class="result">
+            <p>Total doado: <strong>R$ <span id="totalDonated">0.00</span></strong></p>
+            <p>Cestas básicas compradas: <strong><span id="totalBaskets">0</span></strong></p>
+        </div>
+    </div>
+
+    <script>
+        let totalDonated = 0;
+        const basketCost = 70.00; // Valor médio de uma cesta básica
+
+        function addDonation() {
+            const donationInput = document.getElementById('donationValue');
+            const donationValue = parseFloat(donationInput.value);
+
+            if (isNaN(donationValue) || donationValue <= 0) {
+                alert('Por favor, insira um valor válido para a doação.');
+                return;
+            }
+
+            totalDonated += donationValue;
+            updateDisplay();
+
+            donationInput.value = '';
+        }
+
+        function updateDisplay() {
+            const totalDonatedElement = document.getElementById('totalDonated');
+            const totalBasketsElement = document.getElementById('totalBaskets');
+
+            totalDonatedElement.textContent = totalDonated.toFixed(2);
+            totalBasketsElement.textContent = Math.floor(totalDonated / basketCost);
+        }
+    </script>
+</body>
+</html>

@@ -58,7 +58,6 @@ header nav a:hover {
 
 /* Seção inicial */
 .intro-section {
-    background: url('https://via.placeholder.com/1200x800') center/cover no-repeat; /* Imagem de fundo */
     color: #fff; /* Cor do texto */
     text-align: center;
     padding: 2rem;
@@ -67,6 +66,8 @@ header nav a:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /* Títulos da seção inicial */
@@ -192,7 +193,7 @@ main {
 /* Contêiner de vídeo */
 .video-container {
     max-width: 800px;
-    margin: 2rem auto;
+    margin: 5rem auto;
     padding: 1rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
     border-radius: 8px;
@@ -239,4 +240,18 @@ footer {
     background-color: #0077b6; /* Azul escuro */
     color: #fff;
     margin-top: 4rem;
+}
+
+.opacidade{
+    background-image: url('/images/chuva_no_rio_grande_do_sul1.webp') ; /* Imagem de fundo */
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+    position: absolute;
+    z-index: -1;
+    top: -0;
+    left: 0;
+    right: 0;
 }

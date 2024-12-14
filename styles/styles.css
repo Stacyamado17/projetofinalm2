@@ -64,7 +64,7 @@ header nav a:hover {
 
 /* Seção inicial */
 .intro-section {
-    background: url('https://via.placeholder.com/1200x800') center/cover no-repeat; /* Imagem de fundo */
+    background: url('../images/header.png') center/cover no-repeat; /* Imagem de fundo */
     color: #fff; /* Cor do texto */
     text-align: center;
     padding: 2rem;

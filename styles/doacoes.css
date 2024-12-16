@@ -1,8 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
+    font-family: "Roboto Slab", sans-serif;
+    height: 100dvh;
+    margin: 0px;
     text-align: center;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #016296 20%, transparent 40%),linear-gradient(-135deg, #009dbd 20%, transparent 40%),linear-gradient(to bottom, #b0d3da, #7abeca);
+    background-blend-mode: overlay;
 }
+/*#00b4d8, #90e0ef, #caf0f8*/
 .container {
     max-width: 500px;
     margin: 0 auto;
@@ -10,32 +19,85 @@ body {
     border: 1px solid #ccc;
     border-radius: 10px;
     background-color: #f9f9f9;
+    box-shadow:0 10px 15px rgba(0, 0, 0, 0.2),inset 0 4px 4px rgba(0, 0, 0, 0.2),inset 0 -4px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2),inset 0 4px 4px rgba(0, 0, 0, 0.2),inset 0 -4px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container h1 {
+    color: #2fb94f;
 }
 input[type="number"] {
     width: 100%;
-    padding: 10px;
+    padding: 10px 0;
     margin: 10px 0;
-    border: 1px solid #ccc;
+    border: 2px solid #1dc444be;
     border-radius: 5px;
+    text-indent: 10px;
+    transition: border 0.3s ease;
 }
+
+input[type="number"]:hover {
+    border: 2px solid #198a33;
+}
+
+input:focus{
+    outline: none;
+    border: 2px solid #198a33;
+}
+
 button {
+    font-size: 1.3em;
     padding: 10px 20px;
-    background-color: #28a745;
+    background: linear-gradient(135deg, #2fb94f, #198a33);
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background 0.3s ease;
+    align-items: center;
+    display: flex;
+    gap: 5px;
+    margin-top: 20px;
+   transition: background 0.3s ease, transform 0.2s ease;
 }
 button:hover {
-    background-color: #218838;
+    background: linear-gradient(135deg, #198a33, #2fb94f);
+    transform: scale(1.05);
 }
 
+i {
+    font-size: 1.3em;
+}
+
+.donation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
 .result {
     margin-top: 20px;
     font-size: 1.2em;
     color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: start;
+    flex-direction: column;
 }
 
+.result p {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-align: start;
+}
 /* Modal overlay */
 .modal {
     display: none; /* Oculto por padrão */

@@ -6,27 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hackathon - Desastres ambientais</title>
     <link rel="stylesheet" href="styles/styles.css">
-    <style>
-        
-    </style>
+    <link rel="stylesheet" href="styles/header.css">
+    <script rel="stylesheet" src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 
 <body>
     <header>
-        <h1 class="logo">Hackathon</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="#introduction">Sobre</a>
-            <a href="#impact">Impactos</a>
-            <a href="#actions">Como ajudar</a>
-            <a id="doante-nav" href="pages/doacao.html">Doação</a>
-        </nav>
+        <div class="header">
+            <div class="logo">
+                <h1>HackImpact</h1>
+                <img src="images/logo-removebg-preview (1).png" alt="Logo HackImpact">
+                
+            </div>
+            <!-- Botão do Menu Hambúrguer -->
+            <button class="hamburger" aria-label="Abrir Menu">
+                <i class="menu-icon ph ph-list"></i>
+            </button>
+            <nav>
+                <ul class="menu">
+                    <li>
+                        <a class="link-nav" href="#intro-section"><i class="ph ph-house"></i> Home</a>
+                    </li>
+                    <li>
+                        <a class="link-nav" href="#introduction"><i class="ph ph-seal-check"></i> Sobre</a>
+                    </li>
+                    <li>
+                        <a class="link-nav" href="#impact"><i class="ph ph-ambulance"></i> Impactos</a>
+                    </li>
+                    <li>
+                        <a class="link-nav" href="#actions"><i class="ph ph-question-mark"></i> Como ajudar</a>
+                    </li>
+                    <li class="donate">
+                        <a href="./pages/doacao.html"><i class="ph ph-hand-heart"></i>
+                            Doação</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-
-    
-
-    <div class="intro-section">
+    <div id="intro-section" class="intro-section">
         <h2>Maior desastre climático do Rio Grande do Sul</h2>
         <p>Os temporais inundaram pontos simbólicos do estado, destruíram pontes e rodovias, deixaram mais de 160 mortos e expulsaram de casa mais de meio milhão de gaúchos</p>
     </div>
@@ -47,16 +66,20 @@
 
             </p>
             <div class="cards-container">
+                <a href="pages/antes.html" class="card-link">
                 <div class="card">
-                    <img src="/projetofinalm2/images/ANTES Rio-Taquari-em-Lajeado.png" alt="Impact Image 1">
-                    <h3>antes</h3>
+                    <img src="images/ANTES Rio-Taquari-em-Lajeado.png" alt="Impact Image 1">
+                    <h3>Antes</h3>
                     <p>Cidade de lajeado antes das enchentes.</p>
                 </div>
+                </a>
+                <a href="pages/depois.html" class="card-link">
                 <div class="card">
-                    <img src="/projetofinalm2/images/DEPOIS rio taquari rs.jpg" alt="Impact Image 2">
-                    <h3>depois</h3>
+                    <img src="images/DEPOIS rio taquari rs.jpg" alt="Impact Image 2">
+                    <h3>Depois</h3>
                     <p>Cidade de lajeado depois das enchentes.</p>
                 </div>
+            </a>
             </div>
         </section>
 
@@ -86,7 +109,7 @@
             <div id="button-donate">
                 <a id="donate-button" href="pages/doacao.html">Tome uma ação</a>
             </div>
-            <h2>voluntarios</h2>
+            <h2>Voluntarios</h2>
             <p>Se você mora na região ou tem disponibilidade para viajar, o trabalho voluntário pode fazer uma grande diferença. Auxiliar na distribuição de doações, na limpeza de áreas afetadas ou mesmo prestar apoio psicológico às vítimas são formas práticas de ajudar.  
             </p>
             <div class="image-section">
@@ -97,7 +120,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2024 Hackathon Enchentes no Rio Grande do Sul</p>
+        <p>&copy; 2024 HackImpact Enchentes no Rio Grande do Sul</p>
     </footer>
     <script src="scripts/main.js"></script>
 </body>

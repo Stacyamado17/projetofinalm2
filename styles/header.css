@@ -1,0 +1,231 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilização do cabeçalho */
+header {
+  background: linear-gradient(135deg, #0077b6, #00b4d8); /* Gradiente azul */
+  color: #fff;
+  padding: 5px 0;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  position: sticky; /* Fixa o cabeçalho no topo durante a rolagem */
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra leve */
+}
+
+/* Estilo da logo */
+header .logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 3.5rem;
+  margin-left: 30px;
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 1px; /* Espaçamento entre letras */
+}
+
+.logo img {
+  height: 100%;
+  width: 100%;
+  margin-left: 20px;
+}
+
+.header {
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  width: 100%;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  font-size: 1.2em;
+}
+
+header nav ul li a:hover {
+  background-color: #fff;
+  color: #00b4d8;
+  transform: scale(1.1);
+}
+
+header .donate {
+  padding: 10px 20px;
+  color: #333;
+  border-radius: 5px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+header .donate a {
+  background-color: #fff;
+  color: #00b4d8;
+  font-size: 1.2em;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+/* 
+header .donate a:hover {
+  color: #333;
+} */
+
+.donate {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+.donate:hover {
+  color: #333;
+}
+
+@media (min-width: 1010px) {
+  header .logo img {
+    width: 50px;
+  }
+
+  header nav ul li a {
+    font-size: 1.2em;
+  }
+
+  header .login-link {
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 1023px) and (min-width: 768px) {
+  header .container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  header nav ul {
+    gap: 10px;
+  }
+
+  header .logo img {
+    width: 50px;
+  }
+
+  header nav ul li a {
+    font-size: 1em;
+  }
+
+  header .login-link {
+    padding: 10px 20px;
+    font-size: 1em;
+  }
+}
+
+@media (min-width: 1024px) {
+  header .container {
+    padding: 0 20px;
+  }
+
+  header nav ul li a {
+    font-size: 1.2em;
+  }
+
+  header .login-link {
+    padding: 10px 20px;
+  }
+}
+
+.hamburger {
+  display: none;
+  /* Somente para dispositivos móveis */
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  /* Alinhado à direita */
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0;
+  /* Esconde texto (se houver) */
+  z-index: 1000;
+}
+
+.hamburger i {
+  font-size: 32px;
+  /* Tamanho do ícone */
+  transition: all 0.3s ease;
+  /* Animação suave */
+}
+
+@media (max-width: 877px) {
+  .hamburger {
+    display: block;
+    padding: 2px;
+  }
+
+  .menu-icon {
+    color: #fff;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .donate a {
+    color: #00b4d8 !important;
+    background-color: #fff;
+  }
+
+  .menu.active {
+    display: flex;
+    /* Mostra o menu quando ativo */
+    flex-direction: column;
+    position: absolute;
+    top: 65px;
+    right: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #0077b6, #00b4d8); /* Gradiente azul */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+  }
+
+  .link-nav-li {
+    padding: 2px 20px;
+    transition: all 0.3s ease;
+    color: white;
+  }
+
+    .link-nav-li:hover {
+      background-color: #ffffff3b;
+      padding: 2px 20px;
+      border-radius: 10px;
+      color: white;
+    }
+}

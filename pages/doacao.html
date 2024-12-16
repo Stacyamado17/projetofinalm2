@@ -5,17 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doação Interativa</title>
     <link rel="stylesheet" href="../styles/doacoes.css">
+    <script rel="stylesheet" src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
 <body>
     <div class="container">
         <h1>Faça uma Doação</h1>
         <p>Escolha um valor para doar e veja o impacto que você pode causar!</p>
-        <input type="number" id="donationValue" placeholder="Digite o valor da doação (R$)" min="0">
-        <button onclick="addDonation()">Doar</button>
+        <input type="number" id="donationValue" placeholder="Digite o valor da doação (R$)" min="1" max="500"
+        oninput="
+        if(this.value < 1) this.value = 1; if(this.value > 500) this.value = 500; if(this.value.length > 3) this.value = this.value.slice(0, 3);" title="O valor deve estar entre R$1,00 e R$500,00 reais">
+        
+        <div class="donation">
+            
+            <button onclick="addDonation()"><i class="ph ph-money"></i>Doar</button>
+        </div>
 
         <div class="result">
-            <p>Doações totais: <strong>R$ <span id="totalDonated">0.00</span></strong></p>
-            <p>Cestas básicas compradas: <strong><span id="totalBaskets">0</span></strong></p>
+            <p><i class="ph ph-hand-coins"></i>Doações totais: <strong>R$ <span id="totalDonated">0.00</span></strong></p>
+            <p><i class="ph ph-basket"></i>Cestas básicas compradas: <strong><span id="totalBaskets">0</span></strong></p>
         </div>
     </div>
 

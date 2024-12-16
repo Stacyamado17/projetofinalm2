@@ -41,3 +41,49 @@ class ScrollAnimation {
 
 // Cria uma nova instância da classe ScrollAnimation para ativar o comportamento na página
 new ScrollAnimation();
+
+// Adiciona um ouvinte de evento de clique aos links internos
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        const offset = 100;
+        const topPosition = target.offsetTop - offset;
+        window.scrollTo({
+            top: topPosition,
+            behavior: 'smooth'
+        });
+    });
+});
+
+    const hamburger = document.querySelector('.hamburger'); 
+    const menu = document.querySelector('.menu');
+    const hamburgerIcon = hamburger.querySelector('.menu-icon, i');
+    const menuItems = document.querySelectorAll('.menu li a');
+    const headerContainer = document.querySelector(".header");
+
+    // Função para alternar o menu
+    function toggleMenu() {
+        menu.classList.toggle('active');
+        if (menu.classList.contains('active')) {
+            hamburgerIcon.classList.remove('ph-list');
+            hamburgerIcon.classList.add('ph-x');
+        } else {
+            hamburgerIcon.classList.remove('ph-x');
+            hamburgerIcon.classList.add('ph-list');
+        }
+    }
+
+    // Evento de clique no botão hambúrguer
+    hamburger.addEventListener('click', toggleMenu);
+
+    // Fecha o menu ao clicar em qualquer item
+    menuItems.forEach(item => {
+        item.addEventListener('click', () => {
+            if (menu.classList.contains('active')) {
+                menu.classList.remove('active'); // Remove a classe 'active' do menu
+                hamburgerIcon.classList.remove('ph-x');
+                hamburgerIcon.classList.add('ph-list'); // Redefine o ícone para 'ph-list'
+            }
+        });
+    });

@@ -1,7 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* Importando a fonte Roboto */
 @font-face {
     font-family: 'Roboto';
     src: url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+html {
+    scroll-padding-top: 60px;
+}
+
+section {
+    position: relative;
+    scroll-margin-top: 60px;
 }
 
 /* Estilização geral */
@@ -13,59 +30,11 @@ body {
     overflow-x: hidden; /* Evita rolagem horizontal */
 }
 
-/* Estilização do cabeçalho */
-header {
-    background: linear-gradient(135deg, #0077b6, #00b4d8); /* Gradiente azul */
-    color: #fff;
-    padding: 1rem 3rem;
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;
-    position: sticky; /* Fixa o cabeçalho no topo durante a rolagem */
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra leve */
-}
-
-/* Estilo da logo */
-header .logo {
-    font-size: 2rem;
-    font-weight: bold;
-    letter-spacing: 1px; /* Espaçamento entre letras */
-}
-
-/* Navegação */
-header nav {
-    display: flex;
-    gap: 2rem; /* Espaçamento entre os links */
-}
-
-/* Links de navegação */
-header nav a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.2rem; 
-    font-weight: bold;
-    padding: 0.6rem 1.2rem;
-    border-radius: 6px;
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Efeito suave ao passar o mouse */
-}
-
-header nav a:hover {
-    background-color: #fff; 
-    color: #00b4d8;
-    transform: scale(1.1);
-}
-
-#doante-nav {
-    background-color: #fff;
-    color: #00b4d8;
-}
-
 /* Seção inicial */
 .intro-section {
     background: url('../images/header.png') center/cover no-repeat; /* Imagem de fundo */
-    color: #fff; /* Cor do texto */
+    font-family: "Roboto Slab";
+    color: #fff;
     text-align: center;
     padding: 2rem;
     height: calc(100vh - 68px); /* Considera a altura do cabeçalho */
@@ -77,7 +46,7 @@ header nav a:hover {
 
 /* Títulos da seção inicial */
 .intro-section h2 {
-    font-size: 3rem;
+    font-size: 3.9rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Sombra no texto */
 }
 
@@ -162,8 +131,9 @@ main {
     gap: 1.5rem;
 }
 
-/* Cards */
-.card {
+.card-link {
+    text-decoration: none;
+    color: inherit;
     background: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -174,7 +144,9 @@ main {
     transition: transform 0.3s, box-shadow 0.3s; /* Efeitos no hover */
 }
 
-.card:hover {
+/* Cards */
+
+.card-link:hover {
     transform: scale(1.05); /* Aumenta ligeiramente */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -256,7 +228,7 @@ main {
 #donate-button {
     display: block;
     margin: 2rem auto;
-    background-color: #0077b6;
+    background: linear-gradient(135deg, #0077b6, #00b4d8);
     color: #fff;
     padding: 1rem 2rem;
     border: none;
@@ -272,6 +244,8 @@ main {
 #donate-button:hover {
     background-color: #303F4E;
     color: #ece5e5;
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #00b4d8, #0077b6);
 }
 
 /* Rodapé */
@@ -296,3 +270,143 @@ footer {
     left: 0;
     right: 0;
 }
+
+/* Media Queries para dispositivos móveis */
+
+/* Ajustes gerais para telas menores que 768px */
+@media (max-width: 768px) {
+    /* Corpo geral */
+    body {
+      font-size: 90%;
+      padding: 0 1rem;
+    }
+
+    #menu-toggle {
+        display: block;
+      }
+        /* Estiliza o menu nav no mobile */
+  #mobile-nav {
+    display: none; /* Escondido inicialmente */
+    flex-direction: column;
+    gap: 1rem;
+    background-color: #0077b6;
+    padding: 1rem;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+    /* Cabeçalho */
+    
+  
+    /* Seção inicial */
+    .intro-section {
+      padding: 1rem;
+      text-align: center;
+      height: auto;
+    }
+  
+    .intro-section h2 {
+      font-size: 2rem;
+    }
+  
+    .intro-section p {
+      font-size: 1.2rem;
+    }
+  
+    /* Cards e imagens */
+    .cards-container {
+      flex-direction: column;
+    }
+  
+    .card-link {
+      flex: 1 1 100%;
+      margin-bottom: 1.5rem;
+    }
+  
+    .card img {
+      max-width: 100%;
+    }
+  
+    /* Seção de vídeo */
+    .video-container {
+      width: 100%;
+      padding: 0;
+    }
+  
+    video {
+      width: 100%;
+      height: auto;
+    }
+  
+    /* Textos e espaçamentos */
+    .text-section {
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+  
+    /* Botões */
+    #donate-button {
+      font-size: 1rem;
+      padding: 0.8rem 1.5rem;
+    }
+  
+    /* Imagens da seção */
+    .image-section {
+      flex-direction: column;
+    }
+  
+    .image-section img {
+      flex: 1 1 100%;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  /* Ajustes para telas menores que 480px */
+  @media (max-width: 480px) {
+    
+  
+    /* Seção inicial */
+    .intro-section h2 {
+      font-size: 1.8rem;
+    }
+  
+    .intro-section p {
+      font-size: 1rem;
+    }
+  
+    /* Cards e imagens */
+    .card-link {
+      margin-bottom: 1rem;
+    }
+  
+    .card h3 {
+      font-size: 1.2rem;
+    }
+  
+    .card p {
+      font-size: 0.9rem;
+    }
+  
+    /* Botão de doação */
+    #donate-button {
+      font-size: 0.9rem;
+      padding: 0.7rem 1rem;
+    }
+  
+    /* Texto da seção "Como ajudar" */
+    #actions {
+      flex-direction: column;
+      text-align: left;
+    }
+  
+    /* Rodapé */
+    footer {
+      font-size: 0.8rem;
+    }
+  }
+  
